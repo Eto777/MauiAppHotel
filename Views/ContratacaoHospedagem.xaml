@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+
+        <!-- TELA PRINCIPAL -->
+        <Image Source="lunarishotel.png"
+               Aspect="AspectFill"/>
+
+        <!-- GRADIENTE -->
+        <BoxView>
+
+            <BoxView.Background>
+
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+
+                    <GradientStop Color="#CC050505"
+                                  Offset="0"/>
+
+                    <GradientStop Color="#8838145E"
+                                  Offset="0.5"/>
+
+                    <GradientStop Color="#990F3D4C"
+                                  Offset="1"/>
+
+                </LinearGradientBrush>
+
+            </BoxView.Background>
+
+        </BoxView>
+
+        <ScrollView VerticalScrollBarVisibility="Never">
+
+            <VerticalStackLayout
+                Padding="15"
+                Spacing="12">
+
+                
+                <Label Text="🌙 Hotel Lunaris"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#E9D5FF"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Hospedagens mágicas sob a luz da lua"
+                       HorizontalOptions="Center"
+                       TextColor="#C4B5FD"
+                       FontSize="13"/>
+
+                <!-- Na nova atualização o FRAME foi substituido por BORDER -->
+
+                <Border Padding="15"
+                        BackgroundColor="#27272ACC"
+                        StrokeShape="RoundRectangle 25">
+
+                    <VerticalStackLayout Spacing="18">
+
+                        <Grid RowDefinitions="Auto,Auto"
+                              ColumnDefinitions="*,*,2*">
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="Adultos:"
+                                   TextColor="White"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Value, Source={x:Reference stp_adultos}}"
+                                   TextColor="#D8B4FE"/>
+
+                            <Stepper Grid.Row="0"
+                                     Grid.Column="2"
+                                     x:Name="stp_adultos"
+                                     Minimum="0"
+                                     Maximum="10"/>
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="Crianças:"
+                                   TextColor="White"/>
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Value, Source={x:Reference stp_criancas}}"
+                                   TextColor="#D8B4FE"/>
+
+                            <Stepper Grid.Row="1"
+                                     Grid.Column="2"
+                                     x:Name="stp_criancas"
+                                     Minimum="0"
+                                     Maximum="10"/>
+
+                        </Grid>
+
+                        <Label Text="Escolha sua Suíte"
+                               TextColor="White"/>
+
+                        <Picker x:Name="pck_quarto"
+                                 Title="Selecione sua acomodação"
+                                 TextColor="White"/>
+
+                        <!-- Datas corrigidas -->
+
+                        <Border Padding="15"
+                                BackgroundColor="#3F3F46"
+                                StrokeShape="RoundRectangle 20">
+
+                            <Grid RowDefinitions="Auto,Auto"
+                                  ColumnDefinitions="*,Auto"
+                                  RowSpacing="20">
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="🗓️ Check In"
+                                       TextColor="White"
+                                       VerticalOptions="Center"/>
+
+                                <DatePicker Grid.Row="0"
+                                            Grid.Column="1"
+                                            x:Name="dtpck_checkin"
+                                            Format="dd/MM/yyyy"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Text="🗓️ Check Out"
+                                       TextColor="White"
+                                       VerticalOptions="Center"/>
+
+                                <DatePicker Grid.Row="1"
+                                            Grid.Column="1"
+                                            x:Name="dtpck_checkout"
+                                            Format="dd/MM/yyyy"/>
+
+                            </Grid>
+
+                        </Border>
+
+                        <Button Text="Avançar"
+                                Clicked="btn_avancar_Clicked"
+                                BackgroundColor="#8B5CF6"
+                                TextColor="White"
+                                CornerRadius="20"
+                                HeightRequest="45"/>
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

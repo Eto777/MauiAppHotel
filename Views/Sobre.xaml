@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+
+        <!-- FOTO FUNDO -->
+        <Image Source="lunarishotel.png"
+               Aspect="AspectFill"/>
+
+        <!-- Gradiente -->
+        <BoxView>
+
+            <BoxView.Background>
+
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+
+                    <GradientStop Color="#CC050505"
+                                  Offset="0"/>
+
+                    <GradientStop Color="#8838145E"
+                                  Offset="0.5"/>
+
+                    <GradientStop Color="#990F3D4C"
+                                  Offset="1"/>
+
+                </LinearGradientBrush>
+
+            </BoxView.Background>
+
+        </BoxView>
+
+                <VerticalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="30"
+            Spacing="20">
+
+            <Border BackgroundColor="#27272ACC"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="25">
+
+                <VerticalStackLayout
+                    Spacing="18">
+
+                    <Label Text="🌙 Hotel Lunaris"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="#E9D5FF"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Projeto desenvolvido por:"
+                           FontSize="18"
+                           TextColor="#C4B5FD"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Priscila Eto"
+                           FontSize="32"
+                           TextColor="#F9A8D4"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Curso: Desenvolvimento de Sistemas"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="ETEC Getúlio Vargas"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Ano: 2026"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

@@ -41,17 +41,40 @@
                 Padding="15"
                 Spacing="12">
 
-                
-                <Label Text="🌙 Hotel Lunaris"
-                       FontSize="28"
-                       FontAttributes="Bold"
-                       TextColor="#E9D5FF"
-                       HorizontalOptions="Center"/>
+                <VerticalStackLayout Spacing="-25">
 
-                <Label Text="Hospedagens mágicas sob a luz da lua"
-                       HorizontalOptions="Center"
-                       TextColor="#C4B5FD"
-                       FontSize="13"/>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        Spacing="-20">
+
+                        <Image Source="emblema.png"
+                               WidthRequest="110"
+                               HeightRequest="110"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"/>
+
+                        <VerticalStackLayout
+                            Spacing="-8"
+                            VerticalOptions="Center">
+
+                            <Label Text="Hotel Lunaris"
+                                   FontSize="52"
+                                   FontFamily="DancingScript"
+                                   TextColor="#E9D5FF"/>
+
+                            <Label Text="Conforto com toque de luar"
+                                   TextColor="#C4B5FD"
+                                   FontFamily="PlaywriteGBS"
+                                   FontSize="15"
+                                   Margin="5,0,0,0"
+                                   LineBreakMode="WordWrap"/>
+
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
 
                 <!-- Na nova atualização o FRAME foi substituido por BORDER -->
 
@@ -62,39 +85,86 @@
                     <VerticalStackLayout Spacing="18">
 
                         <Grid RowDefinitions="Auto,Auto"
-                              ColumnDefinitions="*,*,2*">
+                              ColumnDefinitions="*,55,40,55"
+                              ColumnSpacing="8"
+                              RowSpacing="15">
 
                             <Label Grid.Row="0"
                                    Grid.Column="0"
                                    Text="Adultos:"
-                                   TextColor="White"/>
+                                   TextColor="White"
+                                   VerticalOptions="Center"/>
+
+                            <Button Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="-"
+                                    Clicked="MenosAdultos"
+                                    WidthRequest="35"
+                                    HeightRequest="35"
+                                    CornerRadius="8"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="#99000000"
+                                    TextColor="White"/>
 
                             <Label Grid.Row="0"
-                                   Grid.Column="1"
-                                   Text="{Binding Value, Source={x:Reference stp_adultos}}"
-                                   TextColor="#D8B4FE"/>
+                                   Grid.Column="2"
+                                   x:Name="lblAdultos"
+                                   Text="0"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   TextColor="White"/>
 
-                            <Stepper Grid.Row="0"
-                                     Grid.Column="2"
-                                     x:Name="stp_adultos"
-                                     Minimum="0"
-                                     Maximum="10"/>
+                            <Button Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="+"
+                                    Clicked="MaisAdultos"
+                                    WidthRequest="35"
+                                    HeightRequest="35"
+                                    CornerRadius="8"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="#99000000"
+                                    TextColor="White"/>
+
 
                             <Label Grid.Row="1"
                                    Grid.Column="0"
                                    Text="Crianças:"
-                                   TextColor="White"/>
+                                   TextColor="White"
+                                   VerticalOptions="Center"/>
+
+                            <Button Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="-"
+                                    Clicked="MenosCriancas"
+                                    WidthRequest="35"
+                                    HeightRequest="35"
+                                    CornerRadius="8"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="#99000000"
+                                    TextColor="White"/>
 
                             <Label Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Value, Source={x:Reference stp_criancas}}"
-                                   TextColor="#D8B4FE"/>
+                                   Grid.Column="2"
+                                   x:Name="lblCriancas"
+                                   Text="0"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   TextColor="White"/>
 
-                            <Stepper Grid.Row="1"
-                                     Grid.Column="2"
-                                     x:Name="stp_criancas"
-                                     Minimum="0"
-                                     Maximum="10"/>
+                            <Button Grid.Row="1"
+                                    Grid.Column="3"
+                                    Text="+"
+                                    Clicked="MaisCriancas"
+                                    WidthRequest="35"
+                                    HeightRequest="35"
+                                    CornerRadius="8"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="#99000000"
+                                    TextColor="White"/>
 
                         </Grid>
 
@@ -103,32 +173,66 @@
 
                         <Picker x:Name="pck_quarto"
                                  Title="Selecione sua acomodação"
-                                 TextColor="White"/>
+                                 HorizontalOptions="Center"
+                                 FontSize="15"
+                                 TextColor="White"
+                                SelectedIndexChanged="pck_quarto_SelectedIndexChanged"/>
+                       
+                        
+                        <!-- Suites -->
 
-                        <!-- Datas corrigidas -->
+                        <Border x:Name="boxSuite" 
+                            Padding="10"
+                           BackgroundColor="#66000000"
+                            StrokeShape="RoundRectangle 15"
+                                IsVisible="False">
+                            
+                            <VerticalStackLayout
+                                Spacing="8">
 
-                        <Border Padding="15"
-                                BackgroundColor="#3F3F46"
-                                StrokeShape="RoundRectangle 20">
+                                <Image x:Name="imgSuite"
+                                HeightRequest="180"
+                                Aspect="AspectFit"
+                                IsVisible="False"
+                                       HorizontalOptions="Fill"/>
 
-                            <Grid RowDefinitions="Auto,Auto"
-                                  ColumnDefinitions="*,Auto"
-                                  RowSpacing="20">
+                                <Label x:Name="lblDescricaoSuite"
+                                        Text=""
+                                        TextColor="White"
+                                        FontSize="14"
+                                        Margin="10,5"
+                                        HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                        IsVisible="False"/>
 
-                                <Label Grid.Row="0"
-                                       Grid.Column="0"
-                                       Text="🗓️ Check In"
-                                       TextColor="White"
-                                       VerticalOptions="Center"/>
+                            </VerticalStackLayout>
 
-                                <DatePicker Grid.Row="0"
+                        </Border>
+
+                                        <!-- Datas -->
+
+                                    <Border Padding="15"
+                                            BackgroundColor="#AA000000"
+                                            StrokeShape="RoundRectangle 20">
+
+                                            <Grid RowDefinitions="Auto,Auto"
+                                                  ColumnDefinitions="*,Auto"
+                                                  RowSpacing="20">
+
+                                                    <Label Grid.Row="0"
+                                                           Grid.Column="0"
+                                                           Text="🗓️ Check In:"
+                                                           TextColor="White"
+                                                           VerticalOptions="Center"/>
+
+                                                        <DatePicker Grid.Row="0"
                                             Grid.Column="1"
                                             x:Name="dtpck_checkin"
                                             Format="dd/MM/yyyy"/>
 
                                 <Label Grid.Row="1"
                                        Grid.Column="0"
-                                       Text="🗓️ Check Out"
+                                       Text="🗓️ Check Out:"
                                        TextColor="White"
                                        VerticalOptions="Center"/>
 
@@ -137,16 +241,31 @@
                                             x:Name="dtpck_checkout"
                                             Format="dd/MM/yyyy"/>
 
-                            </Grid>
+                                                </Grid>
 
                         </Border>
 
                         <Button Text="Avançar"
                                 Clicked="btn_avancar_Clicked"
-                                BackgroundColor="#8B5CF6"
+                                BackgroundColor="#99000000"
                                 TextColor="White"
+                                FontSize="15"
                                 CornerRadius="20"
                                 HeightRequest="45"/>
+
+                            <!-- Stepper oculto-->
+
+                        <Stepper x:Name="stpAdultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 IsVisible="False"/>
+
+                        <Stepper x:Name="stpCriancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 IsVisible="False"/>
 
                     </VerticalStackLayout>
 

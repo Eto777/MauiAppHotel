@@ -7,15 +7,15 @@ Dancing Script is a variable font with this axis:
   wght
 
 This means all the styles are contained in a single file:
-  DancingScript-VariableFont_wght.ttf
+  Dancing_Script/DancingScript-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
 in those cases you can use the static font files for Dancing Script:
-  static/DancingScript-Regular.ttf
-  static/DancingScript-Medium.ttf
-  static/DancingScript-SemiBold.ttf
-  static/DancingScript-Bold.ttf
+  Dancing_Script/static/DancingScript-Regular.ttf
+  Dancing_Script/static/DancingScript-Medium.ttf
+  Dancing_Script/static/DancingScript-SemiBold.ttf
+  Dancing_Script/static/DancingScript-Bold.ttf
 
 Get started
 -----------

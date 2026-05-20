@@ -13,6 +13,7 @@
                Aspect="AspectFill"/>
 
         <!-- Gradiente -->
+
         <BoxView>
 
             <BoxView.Background>
@@ -36,52 +37,93 @@
 
         </BoxView>
 
-                <VerticalStackLayout
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Padding="30"
-            Spacing="20">
 
-            <Border BackgroundColor="#27272ACC"
-                    StrokeShape="RoundRectangle 25"
-                    Padding="25">
+        <ScrollView VerticalScrollBarVisibility="Never">
 
-                <VerticalStackLayout
-                    Spacing="18">
+            <VerticalStackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Padding="30"
+                Spacing="20">
 
-                    <Label Text="🌙 Hotel Lunaris"
-                           FontSize="30"
-                           FontAttributes="Bold"
-                           TextColor="#E9D5FF"
-                           HorizontalOptions="Center"/>
+                <Border BackgroundColor="#27272ACC"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
 
-                    <Label Text="Projeto desenvolvido por:"
-                           FontSize="18"
-                           TextColor="#C4B5FD"
-                           HorizontalOptions="Center"/>
+                    <VerticalStackLayout
+                        Spacing="18">
 
-                    <Label Text="Priscila Eto"
-                           FontSize="32"
-                           TextColor="#F9A8D4"
-                           HorizontalOptions="Center"/>
 
-                    <Label Text="Curso: Desenvolvimento de Sistemas"
-                           TextColor="White"
-                           HorizontalOptions="Center"/>
+                        <!-- Cabeçalho -->
 
-                    <Label Text="ETEC Getúlio Vargas"
-                           TextColor="White"
-                           HorizontalOptions="Center"/>
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Spacing="-10">
 
-                    <Label Text="Ano: 2026"
-                           TextColor="White"
-                           HorizontalOptions="Center"/>
+                            <Image Source="emblema.png"
+                                   WidthRequest="80"
+                                   HeightRequest="80"
+                                   Aspect="AspectFit"
+                                   VerticalOptions="Center"/>
 
-                </VerticalStackLayout>
+                            <VerticalStackLayout
+                                VerticalOptions="Center"
+                                Spacing="-5">
 
-            </Border>
+                                <Label Text="Hotel Lunaris"
+                                       FontSize="42"
+                                       FontFamily="DancingScript"
+                                       TextColor="#E9D5FF"
+                                       LineBreakMode="NoWrap"/>
 
-        </VerticalStackLayout>
+                                <Label Text="Conforto com toque de luar"
+                                       FontFamily="PlaywriteGBS"
+                                       FontSize="12"
+                                       TextColor="#C4B5FD"/>
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+
+                        <Label Text="Projeto desenvolvido por:"
+                               FontSize="18"
+                               TextColor="#C4B5FD"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Priscila Eto"
+                               FontSize="32"
+                               TextColor="#F9A8D4"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineBreakMode="WordWrap"/>
+
+                        <Label Text="Curso: Desenvolvimento de Sistemas"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineBreakMode="WordWrap"/>
+
+                        <Label Text="ETEC Getúlio Vargas"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Ano: 2026"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
 
     </Grid>
 
